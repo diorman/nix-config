@@ -20,6 +20,8 @@
     enable = true;
     casks = [
       "1password"
+      "adobe-acrobat-reader"
+      "discord"
       "docker"
       "firefox"
       "flux"
