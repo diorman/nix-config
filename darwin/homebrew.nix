@@ -32,6 +32,10 @@
       "wireshark"
     ];
 
-    masApps = { Slack = 803453959; };
+    masApps = {
+      Numbers = 409203825;
+      Pages = 409201541;
+      Slack = 803453959;
+    };
   };
 }
