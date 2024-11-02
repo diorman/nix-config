@@ -1,11 +1,6 @@
-{ pkgs, stdenv, config, ... }:
+{ pkgs, config, ... }:
 
-let
-  extraNodePackages = import ./node2nix/composition.nix {
-    inherit pkgs;
-    inherit (stdenv.hostPlatform) system;
-  };
-in {
+{
   programs.neovim = {
     enable = true;
     vimAlias = true;
@@ -26,10 +21,9 @@ in {
     stylua
 
     # TypeScript/JavaScript
-    node2nix
-    nodePackages.typescript-language-server
-    nodePackages.eslint_d
-    extraNodePackages."@fsouza/prettierd"
+    typescript-language-server
+    eslint_d
+    prettierd
   ];
 
   home.sessionVariables = {
