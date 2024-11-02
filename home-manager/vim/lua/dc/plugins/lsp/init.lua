@@ -1,18 +1,8 @@
 require("dc.plugins.lsp.diagnostic").setup()
-require("fidget").setup()
+require("fidget").setup({})
 
-local null_ls = require("null-ls")
-local diagnostics = null_ls.builtins.diagnostics
-local formatting = null_ls.builtins.formatting
-
-null_ls.setup({
-  debug = false,
-  sources = {
-    diagnostics.eslint_d,
-    formatting.prettierd,
-    formatting.stylua,
-  },
-})
+-- TODO: need to find an alternative to null-ls which is deprecated.
+require("dc.plugins.lsp.null-ls").setup()
 
 local lspconfig = require("lspconfig")
 local core = require("dc.plugins.lsp.core")
@@ -36,9 +26,9 @@ local servers = {
   },
 
   -- typescript
-  tsserver = {
+  ts_ls = {
     enabled = true,
-    make_config = require("dc.plugins.lsp.tsserver").make_config,
+    make_config = require("dc.plugins.lsp.ts-ls").make_config,
   },
 
   -- rust
