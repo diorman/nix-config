@@ -39,7 +39,13 @@
             gitSigningKey = "E8F90C5215A46B09";
           } // nixpkgs.lib.trivial.importTOML secrets.outPath;
         };
-        modules = [ ./core.nix ./ux.nix ./homebrew.nix ./home-manager.nix ];
+
+        modules = [
+          ./modules/core.nix
+          ./modules/ux.nix
+          ./modules/homebrew.nix
+          ./modules/home-manager.nix
+        ];
       };
     };
 }
