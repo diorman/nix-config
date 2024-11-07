@@ -1,4 +1,4 @@
-{ home-manager, custom-config, ... }:
+{ home-manager, custom, ... }:
 
 {
   imports = [ home-manager.darwinModules.home-manager ];
@@ -9,8 +9,8 @@
     backupFileExtension = "nix-backup";
     verbose = true;
     extraSpecialArgs = {
-      inherit custom-config;
+      inherit custom;
     };
-    users.${custom-config.user} = import ../../home-manager;
+    users.${custom.config.user} = import ../../home-manager;
   };
 }

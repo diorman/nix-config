@@ -1,4 +1,4 @@
-{ self, custom-config, ... }:
+{ self, custom, ... }:
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -20,8 +20,8 @@
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "x86_64-darwin";
 
-  users.users.${custom-config.user} = {
-    home = "/Users/${custom-config.user}";
+  users.users.${custom.config.user} = {
+    home = "/Users/${custom.config.user}";
   };
 
   # Configure shells to loads the nix-darwin environment.
@@ -30,6 +30,6 @@
 
   # Configure fish as default shell
   system.activationScripts.postActivation.text = ''
-    dscl . -create /Users/${custom-config.user} UserShell /run/current-system/sw/bin/fish
+    dscl . -create /Users/${custom.config.user} UserShell /run/current-system/sw/bin/fish
   '';
 }

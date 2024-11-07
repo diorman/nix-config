@@ -3,7 +3,7 @@
   homebrew-core,
   homebrew-cask,
   homebrew-bundle,
-  custom-config,
+  custom,
   ...
 }:
 
@@ -21,7 +21,7 @@
       "homebrew/homebrew-cask" = homebrew-cask;
       "homebrew/homebrew-bundle" = homebrew-bundle;
     };
-    user = custom-config.user;
+    user = custom.config.user;
     mutableTaps = false;
   };
 

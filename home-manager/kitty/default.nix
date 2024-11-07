@@ -1,6 +1,13 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  custom,
+  ...
+}:
 
 let
+  thisPath = "${custom.config.codePath}/github.com/diorman/nix-config/home-manager/kitty";
+
   terminalIcons = pkgs.fetchgit {
     url = "https://github.com/dhanishgajjar/terminal-icons";
     rev = "fe7efa876a6c2a221caa3123d73f4a629c222405";
@@ -15,13 +22,10 @@ let
 
 in
 {
-  home.file."${config.xdg.configHome}/kitty/kitty.conf".source = config.lib.file.mkOutOfStoreSymlink ./kitty.conf;
-
+  home.file."${config.xdg.configHome}/kitty/kitty.app.icns".source = "${terminalIcons}/icns/dracula.icns";
   home.file."${config.xdg.configHome}/kitty/snazzy.conf".source = "${snazzyTheme}/snazzy.conf";
 
-  home.file."${config.xdg.configHome}/kitty/kitty.app.icns".source = "${terminalIcons}/icns/dracula.icns";
-
-  home.file."${config.xdg.configHome}/kitty/window_manager".source = config.lib.file.mkOutOfStoreSymlink ./window_manager;
-
-  home.file."${config.xdg.configHome}/kitty/tab_bar.py".source = config.lib.file.mkOutOfStoreSymlink ./tab_bar.py;
+  home.file."${config.xdg.configHome}/kitty/kitty.conf".source = config.lib.file.mkOutOfStoreSymlink "${thisPath}/kitty.conf";
+  home.file."${config.xdg.configHome}/kitty/window_manager".source = config.lib.file.mkOutOfStoreSymlink "${thisPath}/window_manager";
+  home.file."${config.xdg.configHome}/kitty/tab_bar.py".source = config.lib.file.mkOutOfStoreSymlink "${thisPath}/tab_bar.py";
 }

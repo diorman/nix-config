@@ -1,5 +1,14 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  custom,
+  ...
+}:
 
+let
+  thisPath = "${custom.config.codePath}/github.com/diorman/nix-config/home-manager/nvim";
+
+in
 {
   programs.neovim = {
     enable = true;
@@ -31,5 +40,5 @@
     ESLINT_D_LOCAL_ESLINT_ONLY = 1;
   };
 
-  home.file."${config.xdg.configHome}/nvim/lua".source = config.lib.file.mkOutOfStoreSymlink ./lua;
+  home.file."${config.xdg.configHome}/nvim/lua".source = config.lib.file.mkOutOfStoreSymlink "${thisPath}/lua";
 }

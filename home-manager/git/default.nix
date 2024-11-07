@@ -1,4 +1,4 @@
-{ pkgs, custom-config, ... }:
+{ pkgs, custom, ... }:
 
 let
   gitFixup = pkgs.writeScriptBin "git-fixup" "${builtins.readFile ./git-fixup.sh}";
@@ -14,7 +14,7 @@ in
     userName = "Diorman Colmenares";
     userEmail = "229201+diorman@users.noreply.github.com";
     signing = {
-      key = custom-config.gitSigningKey;
+      key = custom.config.gitSigningKey;
       signByDefault = true;
     };
     extraConfig = {

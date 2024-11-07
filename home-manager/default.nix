@@ -1,4 +1,4 @@
-{ pkgs, custom-config, ... }:
+{ pkgs, custom, ... }:
 
 {
   imports = [
@@ -17,7 +17,7 @@
   home.sessionVariables = {
     EDITOR = "vim";
     VISUAL = "vim";
-    CODEPATH = custom-config.codePath;
+    CODEPATH = custom.config.codePath;
   };
 
   home.packages = with pkgs; [

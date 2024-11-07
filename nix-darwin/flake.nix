@@ -44,13 +44,15 @@
     {
       darwinConfigurations.alpha = nix-darwin.lib.darwinSystem {
         specialArgs = inputs // {
-          custom-config = rec {
-            homePath = "/Users/diorman";
-            codePath = "${homePath}/Code";
-            host = "alpha";
-            user = "diorman";
-            gitSigningKey = "E8F90C5215A46B09";
-          } // nixpkgs.lib.trivial.importTOML secrets.outPath;
+          custom = {
+            config = rec {
+              homePath = "/Users/diorman";
+              codePath = "${homePath}/Code";
+              host = "alpha";
+              user = "diorman";
+              gitSigningKey = "E8F90C5215A46B09";
+            } // nixpkgs.lib.trivial.importTOML secrets.outPath;
+          };
         };
 
         modules = [
