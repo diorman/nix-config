@@ -29,6 +29,7 @@
         curl # A command line tool for transferring files with URL syntax
         devenv # Fast, Declarative, Reproducible, and Composable Developer Environments using Nix
         findutils # GNU Find Utilities, the basic directory searching utilities of the GNU operating system
+        fnm # Fast and simple Node.js version manager
         fzf # A command-line fuzzy finder written in Go
         gawk # GNU implementation of the Awk programming language
         gnugrep # GNU implementation of the Unix grep command
