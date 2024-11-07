@@ -1,10 +1,18 @@
-{ nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, custom-config
-, ... }:
+{
+  nix-homebrew,
+  homebrew-core,
+  homebrew-cask,
+  homebrew-bundle,
+  custom-config,
+  ...
+}:
 
 {
   imports = [ nix-homebrew.darwinModules.nix-homebrew ];
 
-  environment.variables = { HOMEBREW_NO_ANALYTICS = "1"; };
+  environment.variables = {
+    HOMEBREW_NO_ANALYTICS = "1";
+  };
 
   nix-homebrew = {
     enable = true;

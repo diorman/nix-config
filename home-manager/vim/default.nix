@@ -14,7 +14,7 @@
 
     # Nix
     nil
-    nixfmt
+    nixfmt-rfc-style
 
     # Lua
     sumneko-lua-language-server
@@ -31,6 +31,5 @@
     ESLINT_D_LOCAL_ESLINT_ONLY = 1;
   };
 
-  home.file."${config.xdg.configHome}/nvim/lua".source =
-    config.lib.file.mkOutOfStoreSymlink ./lua;
+  home.file."${config.xdg.configHome}/nvim/lua".source = config.lib.file.mkOutOfStoreSymlink ./lua;
 }

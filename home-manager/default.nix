@@ -1,7 +1,15 @@
 { pkgs, custom-config, ... }:
 
 {
-  imports = [ ./git ./gpg ./keyboard ./kitty ./shell ./ssh ./vim ];
+  imports = [
+    ./git
+    ./gpg
+    ./keyboard
+    ./kitty
+    ./shell
+    ./ssh
+    ./vim
+  ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.05";

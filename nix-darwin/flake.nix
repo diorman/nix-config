@@ -29,8 +29,19 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew
-    , homebrew-core, homebrew-cask, homebrew-bundle, secrets }: {
+  outputs =
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+      home-manager,
+      nix-homebrew,
+      homebrew-core,
+      homebrew-cask,
+      homebrew-bundle,
+      secrets,
+    }:
+    {
       darwinConfigurations.alpha = nix-darwin.lib.darwinSystem {
         specialArgs = inputs // {
           custom-config = rec {
@@ -51,4 +62,3 @@
       };
     };
 }
-

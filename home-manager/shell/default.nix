@@ -1,4 +1,10 @@
-{ pkgs, config, lib, osConfig, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  osConfig,
+  ...
+}:
 
 {
   programs = {
@@ -16,20 +22,21 @@
       #
       # This gist explains the issue in more detail: https://gist.github.com/Linerre/f11ad4a6a934dcf01ee8415c9457e7b2
       # There is also an issue open for nix-darwin: https://github.com/LnL7/nix-darwin/issues/122
-      loginShellInit = let
-        # This naive quoting is good enough in this case. There shouldn't be any
-        # double quotes in the input string, and it needs to be double quoted in case
-        # it contains a space (which is unlikely!)
-        dquote = str: ''"'' + str + ''"'';
+      loginShellInit =
+        let
+          # This naive quoting is good enough in this case. There shouldn't be any
+          # double quotes in the input string, and it needs to be double quoted in case
+          # it contains a space (which is unlikely!)
+          dquote = str: ''"'' + str + ''"'';
 
-        makeBinPathList = map (path: path + "/bin");
-      in ''
-        fish_add_path --move --prepend --path ${
-          lib.concatMapStringsSep " " dquote
-          (makeBinPathList osConfig.environment.profiles)
-        }
-        set fish_user_paths $fish_user_paths
-      '';
+          makeBinPathList = map (path: path + "/bin");
+        in
+        ''
+          fish_add_path --move --prepend --path ${
+            lib.concatMapStringsSep " " dquote (makeBinPathList osConfig.environment.profiles)
+          }
+          set fish_user_paths $fish_user_paths
+        '';
 
       interactiveShellInit = ''
         # disable the welcome message

@@ -6,4 +6,3 @@
     IdentityFile ~/.ssh/id_ed25519
   '';
 }
-

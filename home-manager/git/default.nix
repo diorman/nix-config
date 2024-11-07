@@ -1,15 +1,14 @@
 { pkgs, custom-config, ... }:
 
 let
-  gitFixup =
-    pkgs.writeScriptBin "git-fixup" "${builtins.readFile ./git-fixup.sh}";
+  gitFixup = pkgs.writeScriptBin "git-fixup" "${builtins.readFile ./git-fixup.sh}";
 
-  gitFuzzySwitch = pkgs.writeScriptBin "git-fuzzy-switch"
-    "${builtins.readFile ./git-fuzzy-switch.sh}";
+  gitFuzzySwitch = pkgs.writeScriptBin "git-fuzzy-switch" "${builtins.readFile ./git-fuzzy-switch.sh}";
 
   gitGet = pkgs.writeScriptBin "git-get" "${builtins.readFile ./git-get.sh}";
 
-in {
+in
+{
   programs.git = {
     enable = true;
     userName = "Diorman Colmenares";
@@ -42,8 +41,7 @@ in {
       };
       credential.helper = "osxkeychain";
       fetch.prune = true;
-      format.pretty =
-        "format:%Cred%h%Creset%C(yellow)%d%Creset %s %C(bold blue)<%an>%n%C(magenta)%ad %Cgreen(%cr)%Creset%n";
+      format.pretty = "format:%Cred%h%Creset%C(yellow)%d%Creset %s %C(bold blue)<%an>%n%C(magenta)%ad %Cgreen(%cr)%Creset%n";
       init.defaultBranch = "main";
       push = {
         autoSetupRemote = true;
@@ -65,5 +63,9 @@ in {
     ];
   };
 
-  home.packages = [ gitFixup gitFuzzySwitch gitGet ];
+  home.packages = [
+    gitFixup
+    gitFuzzySwitch
+    gitGet
+  ];
 }

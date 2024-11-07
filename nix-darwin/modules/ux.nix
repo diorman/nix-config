@@ -69,8 +69,10 @@
   };
 
   # Set language and text formats
-  system.defaults.CustomUserPreferences.system.defauts.NSGlobalDomain.AppleLanguages =
-    [ "en" "es" ];
+  system.defaults.CustomUserPreferences.system.defauts.NSGlobalDomain.AppleLanguages = [
+    "en"
+    "es"
+  ];
   system.defaults.NSGlobalDomain.AppleMeasurementUnits = "Centimeters";
   system.defaults.NSGlobalDomain.AppleMetricUnits = 1;
 

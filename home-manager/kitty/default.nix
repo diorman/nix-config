@@ -13,20 +13,15 @@ let
     sha256 = "098qpq2v72hk6mafbrxhjzh6pvmima7wydd6fzlq6zy4jxxq53l5";
   };
 
-in {
-  home.file."${config.xdg.configHome}/kitty/kitty.conf".source =
-    config.lib.file.mkOutOfStoreSymlink ./kitty.conf;
+in
+{
+  home.file."${config.xdg.configHome}/kitty/kitty.conf".source = config.lib.file.mkOutOfStoreSymlink ./kitty.conf;
 
-  home.file."${config.xdg.configHome}/kitty/snazzy.conf".source =
-    "${snazzyTheme}/snazzy.conf";
+  home.file."${config.xdg.configHome}/kitty/snazzy.conf".source = "${snazzyTheme}/snazzy.conf";
 
-  home.file."${config.xdg.configHome}/kitty/kitty.app.icns".source =
-    "${terminalIcons}/icns/dracula.icns";
+  home.file."${config.xdg.configHome}/kitty/kitty.app.icns".source = "${terminalIcons}/icns/dracula.icns";
 
-  home.file."${config.xdg.configHome}/kitty/window_manager".source =
-    config.lib.file.mkOutOfStoreSymlink ./window_manager;
+  home.file."${config.xdg.configHome}/kitty/window_manager".source = config.lib.file.mkOutOfStoreSymlink ./window_manager;
 
-  home.file."${config.xdg.configHome}/kitty/tab_bar.py".source =
-    config.lib.file.mkOutOfStoreSymlink ./tab_bar.py;
+  home.file."${config.xdg.configHome}/kitty/tab_bar.py".source = config.lib.file.mkOutOfStoreSymlink ./tab_bar.py;
 }
-
