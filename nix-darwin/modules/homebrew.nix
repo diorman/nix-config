@@ -1,4 +1,5 @@
-{ nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, xcfg, ... }:
+{ nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle, custom-config
+, ... }:
 
 {
   imports = [ nix-homebrew.darwinModules.nix-homebrew ];
@@ -12,7 +13,7 @@
       "homebrew/homebrew-cask" = homebrew-cask;
       "homebrew/homebrew-bundle" = homebrew-bundle;
     };
-    user = xcfg.user;
+    user = custom-config.user;
     mutableTaps = false;
   };
 

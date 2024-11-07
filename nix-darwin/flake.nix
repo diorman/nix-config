@@ -33,7 +33,9 @@
     , homebrew-core, homebrew-cask, homebrew-bundle, secrets }: {
       darwinConfigurations.alpha = nix-darwin.lib.darwinSystem {
         specialArgs = inputs // {
-          xcfg = {
+          custom-config = rec {
+            homePath = "/Users/diorman";
+            codePath = "${homePath}/Code";
             host = "alpha";
             user = "diorman";
             gitSigningKey = "E8F90C5215A46B09";

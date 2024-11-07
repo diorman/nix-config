@@ -1,4 +1,4 @@
-{ pkgs, home-manager, xcfg, ... }:
+{ pkgs, custom-config, ... }:
 
 {
   imports = [ ./git ./gpg ./keyboard ./kitty ./shell ./ssh ./vim ];
@@ -9,7 +9,7 @@
   home.sessionVariables = {
     EDITOR = "vim";
     VISUAL = "vim";
-    CODEPATH = "/Users/${xcfg.user}/Code";
+    CODEPATH = custom-config.codePath;
   };
 
   home.packages = with pkgs; [

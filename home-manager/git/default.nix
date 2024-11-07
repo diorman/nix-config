@@ -1,4 +1,4 @@
-{ pkgs, xcfg, ... }:
+{ pkgs, custom-config, ... }:
 
 let
   gitFixup =
@@ -15,7 +15,7 @@ in {
     userName = "Diorman Colmenares";
     userEmail = "229201+diorman@users.noreply.github.com";
     signing = {
-      key = xcfg.gitSigningKey;
+      key = custom-config.gitSigningKey;
       signByDefault = true;
     };
     extraConfig = {

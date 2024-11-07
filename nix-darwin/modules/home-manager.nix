@@ -1,4 +1,4 @@
-{ home-manager, xcfg, ... }:
+{ home-manager, custom-config, ... }:
 
 {
   imports = [ home-manager.darwinModules.home-manager ];
@@ -8,7 +8,7 @@
     useUserPackages = true;
     backupFileExtension = "nix-backup";
     verbose = true;
-    extraSpecialArgs = { inherit xcfg; };
-    users.${xcfg.user} = import ../../home-manager;
+    extraSpecialArgs = { inherit custom-config; };
+    users.${custom-config.user} = import ../../home-manager;
   };
 }
