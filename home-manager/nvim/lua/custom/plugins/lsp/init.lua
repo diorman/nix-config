@@ -1,11 +1,11 @@
-require("dc.plugins.lsp.diagnostic").setup()
+require("custom.plugins.lsp.diagnostic").setup()
 require("fidget").setup({})
 
 -- TODO: need to find an alternative to null-ls which is deprecated.
-require("dc.plugins.lsp.null-ls").setup()
+require("custom.plugins.lsp.null-ls").setup()
 
 local lspconfig = require("lspconfig")
-local core = require("dc.plugins.lsp.core")
+local core = require("custom.plugins.lsp.core")
 local servers = {
   -- golang
   gopls = {
@@ -16,19 +16,19 @@ local servers = {
   -- nix
   nil_ls = {
     enabled = true,
-    make_config = require("dc.plugins.lsp.nil-ls").make_config,
+    make_config = require("custom.plugins.lsp.nil-ls").make_config,
   },
 
   -- lua
   lua_ls = {
     enabled = true,
-    make_config = require("dc.plugins.lsp.lua-ls").make_config,
+    make_config = require("custom.plugins.lsp.lua-ls").make_config,
   },
 
   -- typescript
   ts_ls = {
     enabled = true,
-    make_config = require("dc.plugins.lsp.ts-ls").make_config,
+    make_config = require("custom.plugins.lsp.ts-ls").make_config,
   },
 
   -- rust

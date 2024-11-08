@@ -1,0 +1,13 @@
+require("custom.core")
+require("custom.packer")
+
+require("custom.plugins.autopairs")
+require("custom.plugins.comment")
+require("custom.plugins.cmp")
+require("custom.plugins.gitsigns")
+require("custom.plugins.lsp")
+require("custom.plugins.lualine")
+require("custom.plugins.nightfox")
+require("custom.plugins.telescope")
+require("custom.plugins.tree")
+require("custom.plugins.treesitter")

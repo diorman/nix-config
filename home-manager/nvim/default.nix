@@ -13,7 +13,7 @@ in
   programs.neovim = {
     enable = true;
     vimAlias = true;
-    extraConfig = "lua require('dc')";
+    extraConfig = "lua require('custom')";
     plugins = with pkgs.vimPlugins; [ packer-nvim ];
   };
 
