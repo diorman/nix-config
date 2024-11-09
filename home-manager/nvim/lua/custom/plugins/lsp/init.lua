@@ -1,9 +1,6 @@
 require("custom.plugins.lsp.diagnostic").setup()
 require("fidget").setup({})
 
--- TODO: need to find an alternative to null-ls which is deprecated.
-require("custom.plugins.lsp.null-ls").setup()
-
 local lspconfig = require("lspconfig")
 local core = require("custom.plugins.lsp.core")
 local servers = {

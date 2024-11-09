@@ -54,6 +54,23 @@ return require("packer").startup(function(use)
     },
   })
 
+  use({
+    "mfussenegger/nvim-lint",
+    config = function()
+      require("lint").linters_by_ft = {
+        typescript = { "eslint_d" },
+      }
+
+      local autocmdGroup = vim.api.nvim_create_augroup("nvim-lint", { clear = true })
+      vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+        group = autocmdGroup,
+        callback = function()
+          require("lint").try_lint()
+        end,
+      })
+    end,
+  })
+
   use({ -- Autoformat
     "stevearc/conform.nvim",
     config = function()
@@ -87,7 +104,6 @@ return require("packer").startup(function(use)
     end,
   })
 
-  use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP features via Lua
   use("lewis6991/gitsigns.nvim") -- Git
   use("numToStr/Comment.nvim") -- Comments
   use("lukas-reineke/indent-blankline.nvim") -- Add indentation guides even on blank lines
