@@ -34,29 +34,33 @@ require("gitsigns").setup({
     end)
 
     -- Actions
-    map("n", "<leader>hs", gitsigns.stage_hunk)
-    map("n", "<leader>hr", gitsigns.reset_hunk)
+    map("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Git: Stage hunk" })
     map("v", "<leader>hs", function()
       gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-    end)
+    end, { desc = "Git: Stage hunk" })
+
+    map("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Git: Reset hunk" })
     map("v", "<leader>hr", function()
       gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-    end)
-    map("n", "<leader>hS", gitsigns.stage_buffer)
-    map("n", "<leader>hu", gitsigns.undo_stage_hunk)
-    map("n", "<leader>hR", gitsigns.reset_buffer)
-    map("n", "<leader>hp", gitsigns.preview_hunk)
+    end, { desc = "Git: Reset hunk" })
+
+    map("n", "<leader>hS", gitsigns.stage_buffer, { desc = "Git: Stage buffer" })
+    map("n", "<leader>hu", gitsigns.undo_stage_hunk, { desc = "Git: Undo stage hunk" })
+    map("n", "<leader>hR", gitsigns.reset_buffer, { desc = "Git: Reset buffer" })
+    map("n", "<leader>td", gitsigns.toggle_deleted, { desc = "Git: Toggle deleted" })
+    map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Git: Preview hunk" })
+
+    map("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "Git: Toggle blame on current line" })
     map("n", "<leader>hb", function()
       gitsigns.blame_line({ full = true })
-    end)
-    map("n", "<leader>tb", gitsigns.toggle_current_line_blame)
-    map("n", "<leader>hd", gitsigns.diffthis)
+    end, { desc = "Git: Blame line" })
+
+    map("n", "<leader>hd", gitsigns.diffthis, { desc = "Git: Diff" })
     map("n", "<leader>hD", function()
       gitsigns.diffthis("~")
-    end)
-    map("n", "<leader>td", gitsigns.toggle_deleted)
+    end, { desc = "Git: Diff" })
 
     -- Text object
-    map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+    map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Git: Select hunk" })
   end,
 })
