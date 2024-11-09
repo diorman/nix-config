@@ -16,7 +16,7 @@ local servers = {
   -- nix
   nil_ls = {
     enabled = true,
-    make_config = require("custom.plugins.lsp.nil-ls").make_config,
+    make_config = core.make_config,
   },
 
   -- lua
@@ -28,7 +28,7 @@ local servers = {
   -- typescript
   ts_ls = {
     enabled = true,
-    make_config = require("custom.plugins.lsp.ts-ls").make_config,
+    make_config = core.make_config,
   },
 
   -- rust

@@ -48,20 +48,6 @@ local set_keymaps = function(bufnr)
   map("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 end
 
-local augroup_format = vim.api.nvim_create_augroup("custom-lsp-format", { clear = true })
-
-local function autocmd(event, group, callback, buffer, opts)
-  opts = opts or {}
-  vim.api.nvim_create_autocmd(event, {
-    group = group,
-    buffer = buffer,
-    callback = function()
-      callback()
-    end,
-    once = opts.once,
-  })
-end
-
 local set_autocommands = function(client, buffer)
   -- The following two autocommands are used to highlight references of the
   -- word under your cursor when your cursor rests there for a little while.
@@ -90,10 +76,6 @@ local set_autocommands = function(client, buffer)
       end,
     })
   end
-
-  autocmd("BufWritePre", augroup_format, function()
-    vim.lsp.buf.format({ async = false })
-  end, buffer)
 end
 
 M.on_attach = function(client, bufnr)

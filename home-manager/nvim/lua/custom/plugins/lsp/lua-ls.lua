@@ -31,8 +31,6 @@ M.make_config = function()
       },
     },
     on_attach = function(client, bufnr)
-      -- use stylua for formatting instead
-      client.server_capabilities.documentFormattingProvider = false
       client.server_capabilities.documentRangeFormattingProvider = false
       core.on_attach(client, bufnr)
     end,
