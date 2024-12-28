@@ -13,31 +13,33 @@ in
   programs.neovim = {
     enable = true;
     vimAlias = true;
-    extraConfig = "lua require('custom')";
-    plugins = with pkgs.vimPlugins; [ packer-nvim ];
+    extraConfig = "lua require('config')";
   };
 
   home.packages = with pkgs; [
     # Go
-    gopls
+    # gopls
 
     # Nix
-    nil
-    nixfmt-rfc-style
+    # nil
+    # nixfmt-rfc-style
 
     # Lua
-    sumneko-lua-language-server
-    stylua
+    # sumneko-lua-language-server
+    # stylua
 
     # TypeScript/JavaScript
-    typescript-language-server
-    eslint_d
-    prettierd
+    # typescript-language-server
+    # vscode-langservers-extracted
+    # prettierd
+    # TODO: Delete after testing eslint LSP
+    # eslint_d
   ];
 
   home.sessionVariables = {
     PRETTIERD_LOCAL_PRETTIER_ONLY = 1;
-    ESLINT_D_LOCAL_ESLINT_ONLY = 1;
+    # TODO: Delete after testing eslint LSP
+    # ESLINT_D_LOCAL_ESLINT_ONLY = 1;
   };
 
   home.file."${config.xdg.configHome}/nvim/lua".source = config.lib.file.mkOutOfStoreSymlink "${thisPath}/lua";
