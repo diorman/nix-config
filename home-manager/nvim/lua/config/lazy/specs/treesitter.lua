@@ -19,6 +19,8 @@ return {
 
         "lua",
         "make",
+        "markdown",
+        "markdown_inline",
         "nix",
         "ruby",
         "rust",
