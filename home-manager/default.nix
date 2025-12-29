@@ -24,6 +24,7 @@
   home.packages = with pkgs; [
     awscli2 # Unified tool to manage your AWS services
     bat # A cat clone with syntax highlighting and Git integration
+    colima # Container runtimes with minimal setup
     coreutils # The basic file, shell and text manipulation utilities of the GNU operating system
     curl # A command line tool for transferring files with URL syntax
     devenv # Fast, Declarative, Reproducible, and Composable Developer Environments using Nix

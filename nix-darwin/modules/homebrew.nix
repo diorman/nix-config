@@ -36,7 +36,6 @@
       "font-fira-code-nerd-font"
       "karabiner-elements"
       "kitty"
-      "orbstack"
       "spotify"
       "wireshark"
     ];
