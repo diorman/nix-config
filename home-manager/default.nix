@@ -39,6 +39,7 @@
     kubectl # Kubernetes CLI
     kubectx # Fast way to switch between clusters and namespaces in kubectl!
     lazygit # Simple terminal UI for git commands
+    opencode # AI coding agent built for the terminal
     openssl # A cryptographic library that implements the SSL and TLS protocols
     ripgrep # Line-oriented search tool that recursively searches the current directory for a regex pattern
     tmate # Instant Terminal Sharing
