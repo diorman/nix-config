@@ -31,12 +31,12 @@
       "1password"
       "adobe-acrobat-reader"
       "discord"
-      "docker"
       "firefox"
       "flux"
       "font-fira-code-nerd-font"
       "karabiner-elements"
       "kitty"
+      "orbstack"
       "spotify"
       "wireshark"
     ];
