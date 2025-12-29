@@ -11,13 +11,15 @@ in
 {
   programs.git = {
     enable = true;
-    userName = "Diorman Colmenares";
-    userEmail = "229201+diorman@users.noreply.github.com";
     signing = {
       key = custom.config.gitSigningKey;
       signByDefault = true;
     };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Diorman Colmenares";
+        email = "229201+diorman@users.noreply.github.com";
+      };
       alias = {
         s = "status";
         sw = "switch";
@@ -36,7 +38,7 @@ in
         ui = true;
       };
       core = {
-        editor = "vim";
+        editor = "nvim";
         autocrlf = "input";
       };
       credential.helper = "osxkeychain";
