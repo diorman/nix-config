@@ -32,18 +32,25 @@
       "adobe-acrobat-reader"
       "discord"
       "firefox"
-      "flux"
+      "flux-app"
       "font-fira-code-nerd-font"
       "karabiner-elements"
       "kitty"
+      "slack"
       "spotify"
-      "wireshark"
+      "wireshark-app"
+      "zen"
     ];
 
     masApps = {
       Numbers = 409203825;
       Pages = 409201541;
-      Slack = 803453959;
+    };
+
+    onActivation = {
+      autoUpdate = true;
+      # cleanup = "zap";
+      upgrade = true;
     };
   };
 }
