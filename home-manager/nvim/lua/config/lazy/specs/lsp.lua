@@ -156,7 +156,8 @@ return {
       for server, config in pairs(opts.servers) do
         config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities or {})
         config.on_attach = on_attach
-        require("lspconfig")[server].setup(config)
+        vim.lsp.config(server, config)
+        vim.lsp.enable(server)
       end
     end,
   },
