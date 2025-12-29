@@ -1,11 +1,18 @@
-{ self, custom, ... }:
+{
+  self,
+  pkgs,
+  custom,
+  ...
+}:
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [ ];
 
+  system.primaryUser = custom.config.user;
+
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  # services.nix-daemon.enable = true;
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
@@ -22,14 +29,10 @@
 
   users.users.${custom.config.user} = {
     home = "/Users/${custom.config.user}";
+    shell = pkgs.fish;
   };
 
   # Configure shells to loads the nix-darwin environment.
   programs.fish.enable = true;
   programs.bash.enable = true;
-
-  # Configure fish as default shell
-  system.activationScripts.postActivation.text = ''
-    dscl . -create /Users/${custom.config.user} UserShell /run/current-system/sw/bin/fish
-  '';
 }
