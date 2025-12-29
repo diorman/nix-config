@@ -36,6 +36,7 @@
       "font-fira-code-nerd-font"
       "karabiner-elements"
       "kitty"
+      "obsidian"
       "slack"
       "spotify"
       "wireshark-app"
