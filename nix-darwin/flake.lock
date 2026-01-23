@@ -19,7 +19,9 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1769132734,
@@ -54,11 +56,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1769143963,
-        "narHash": "sha256-qoVd1A/wDYDFfWh8Jdft0bXlmf96FhGQzBNLldoD1to=",
+        "lastModified": 1769145356,
+        "narHash": "sha256-ceIR4uGaCDQpsBMb/j4ThSkuXE6iJsGlnh4ZPXRCEWg=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "f5c53471698428212f3527be80a3d174ff377159",
+        "rev": "791492fbbc7d0f45afd3fe8b0dc969253d226c4d",
         "type": "github"
       },
       "original": {
@@ -70,11 +72,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1769144674,
-        "narHash": "sha256-ax8OFv7/EIhS9Rdj6N/N0viv7Yw8SjAulc0vOHBtr98=",
+        "lastModified": 1769146313,
+        "narHash": "sha256-jY9Q9flsmsG7AbaTQz664fgN7WxlDU8SATgP9p3yijk=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "91ac3730303ea2d52ff94b97910da13de6ca1bfa",
+        "rev": "12e35c74ad13b582ba521a0df121d20f5c02d0a9",
         "type": "github"
       },
       "original": {
@@ -123,22 +125,6 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1768886240,
-        "narHash": "sha256-C2TjvwYZ2VDxYWeqvvJ5XPPp6U7H66zeJlRaErJKoEM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "80e4adbcf8992d3fd27ad4964fbb84907f9478b0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
         "lastModified": 1768875095,
         "narHash": "sha256-dYP3DjiL7oIiiq3H65tGIXXIT1Waiadmv93JS0sS+8A=",
         "owner": "NixOS",
@@ -161,7 +147,7 @@
         "homebrew-core": "homebrew-core",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "secrets": "secrets"
       }
     },
