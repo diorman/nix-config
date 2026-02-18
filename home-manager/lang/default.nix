@@ -16,7 +16,7 @@
 
     # Nix
     nil # Yet another language server for Nix
-    nixfmt-rfc-style # Official formatter for Nix code
+    nixfmt # Official formatter for Nix code
 
     # Lua
     lua-language-server # Language server that offers Lua language support
