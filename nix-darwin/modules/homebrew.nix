@@ -29,11 +29,11 @@
     enable = true;
     casks = [
       "1password"
-      "adobe-acrobat-reader"
       "discord"
       "firefox"
       "flux-app"
       "font-fira-code-nerd-font"
+      "gimp"
       "karabiner-elements"
       "kitty"
       "obsidian"
@@ -41,6 +41,7 @@
       "spotify"
       "wireshark-app"
       "zen"
+      "zoom"
     ];
 
     masApps = {
@@ -50,7 +51,7 @@
 
     onActivation = {
       autoUpdate = true;
-      # cleanup = "zap";
+      cleanup = "zap";
       upgrade = true;
     };
   };
