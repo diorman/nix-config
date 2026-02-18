@@ -3,10 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+
     home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
     secrets = {
       url = "file+file:///dev/null";
@@ -51,7 +55,8 @@
               host = "alpha";
               user = "diorman";
               gitSigningKey = "E8F90C5215A46B09";
-            } // nixpkgs.lib.trivial.importTOML secrets.outPath;
+            }
+            // nixpkgs.lib.trivial.importTOML secrets.outPath;
           };
         };
 
